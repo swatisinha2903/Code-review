@@ -1,0 +1,3990 @@
+.creditors_module--accounts {
+    -ms-grid-rows: 60px 40px 1fr;
+    grid-template-rows: 60px 1fr;
+    will-change: transform;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    overflow: hidden;
+    display: grid;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 40px 40px 1fr 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 40px 1fr 40px;
+    position: relative;
+    margin-top: 1%
+}
+
+.creditor_detail_wrapper {
+    display: flex;
+    align-self: center;
+}
+
+.accounts_module--section .mobileCreditorTabSelectRow {
+    display: none
+}
+
+.settlementOfferCard .monthlyPayment_amount {
+    padding-left: 5px;
+}
+
+.creditor_item_approve_btn {
+    width: 200px;
+    margin: auto;
+}
+
+.accounts_module--section h2 {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    padding-left: 0!important;
+    font-weight: 500;
+}
+
+.module--row {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, .1);
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-top: 20px;
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.creditors_module--accounts .creditor_header_row {
+    width: 100%;
+    position: relative;
+    height: 40px
+}
+
+.creditors_module--accounts .sort_wrapper {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #000;
+    width: 230px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 32px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 8px 8px 8px 8px;
+    justify-content: flex-end
+}
+
+.creditors_module--accounts .sort_wrapper .sortLabel {
+    color: #20037d;
+    padding-right: 5px;
+    align-self: center;
+    width: 50px;
+    font-weight: 500;
+    height: fit-content
+}
+
+.creditors_module--accounts .sort_wrapper option {
+    background: #fff
+}
+
+.creditors_module--accounts .sort_wrapper select {
+    background-color: #fcfdfe;
+    height: 40px;
+    border: 1px solid #d1dce7;
+    border-radius: 6px;
+    color: #4f6d8d;
+    margin-bottom: 15px;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    overflow: hidden;
+    padding: 2px 30px 2px 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    appearance: none;
+    border-collapse: separate;
+    width: 100%
+}
+
+.creditors_module--accounts .sort_wrapper select:hover {
+    border-color: #888
+}
+
+.creditors_module--accounts .sort_wrapper select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none
+}
+
+.creditors_module--accounts .sort_wrapper select::-ms-expand {
+    display: none
+}
+
+.creditors_module--accounts .sort_wrapper .sort_header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto
+}
+
+.creditors_module--accounts .sort_wrapper .sort_header span {
+    color: #fff;
+    pointer-events: none
+}
+
+.creditors_module--accounts .sort_wrapper .sort_header span:first-child {
+    text-align: left;
+    width: 70%;
+    align-self: center
+}
+
+.creditors_module--accounts .sort_wrapper .sort_header span:nth-child(2) {
+    text-align: right;
+    width: 20px;
+    height: 28px;
+    align-self: center
+}
+
+.creditors_module--accounts .sort_wrapper .sort_header img {
+    width: 100%;
+    height: auto
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper {
+    background: #0074e1;
+    flex-direction: column;
+    padding: 15%;
+    width: 210px;
+    position: absolute;
+    top: 90%;
+    right: 0;
+    border-radius: 8px 0 8px 8px;
+    z-index: 99
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper .sort_option {
+    display: flex;
+    flex-direction: row;
+    margin: 0
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper .sort_option:hover span {
+    font-weight: 400
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper span {
+    display: block;
+    color: #fff;
+    text-decoration-line: none;
+    text-align: right;
+    font-size: 14px;
+    white-space: nowrap;
+    padding-right: 10px;
+    cursor: pointer
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper .selectedOption {
+    font-weight: 400
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper .selectedSort {
+    height: 20px;
+    display: block;
+    width: 20px
+}
+
+.creditors_module--accounts .sort_wrapper .sort_options_wrapper .selectedSort img {
+    width: 100%;
+    height: auto;
+    object-fit: contain
+}
+
+.creditors_module--accounts .creditorTabSelectRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-bottom: 4px solid #d1dce8;
+    grid-row: 2;
+    grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1
+}
+
+.creditors_module--accounts .creditorTabSelectRow .navigation-item-title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4d4d4d;
+    text-transform: uppercase
+}
+
+.creditors_module--accounts .creditorTabSelectRow ul {
+    list-style-type: none;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    margin: auto;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+}
+
+.creditors_module--accounts .creditorTabSelectRow li {
+    white-space: nowrap;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    height: 23px;
+    cursor: pointer
+}
+
+.creditors_module--accounts .creditorTabSelectRow li.isactive {
+    color: red
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:hover .navigation-item-title {
+    color: #20037d
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:hover:after {
+    transform: scaleX(1)
+}
+
+.creditors_module--accounts .creditorTabSelectRow li.selected:after {
+    transform: scaleX(1);
+    border-bottom: 4px solid #d82c50
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:first-child {
+    -ms-grid-column: 1
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(2) {
+    -ms-grid-column: 2
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(3) {
+    -ms-grid-column: 3
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(4) {
+    -ms-grid-column: 4
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(5) {
+    -ms-grid-column: 5
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(6) {
+    -ms-grid-column: 6
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(7) {
+    -ms-grid-column: 7;
+    grid-column: 7
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:nth-child(8) {
+    -ms-grid-column: 8;
+    grid-column: 8
+}
+
+.creditors_module--accounts .creditorTabSelectRow li:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 4px solid #d82c50;
+    padding-top: 1px;
+    transform: scaleX(0);
+    transition: transform .25s ease-in-out
+}
+
+.creditors_module--accounts .settlementsTabSelectRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-bottom: 4px solid #d1dce8
+}
+
+.creditors_module--accounts .settlementsTabSelectRow.show {
+    visibility: initial
+}
+
+.creditors_module--accounts .settlementsTabSelectRow.hide {
+    height: 0;
+    visibility: hidden
+}
+
+.creditors_module--accounts .settlementsTabSelectRow .navigation-item-title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4d4d4d;
+    text-transform: uppercase
+}
+
+.creditors_module--accounts .settlementsTabSelectRow ul {
+    list-style-type: none;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    margin: auto;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li {
+    min-width: 150px;
+    padding-left: 1%;
+    padding-right: 1%;
+    text-align: center;
+    height: 23px;
+    cursor: pointer
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li:active {
+    color: red
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li:active:after {
+    transform: scaleX(1)
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li:hover .navigation-item-title {
+    color: #20037d
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li:hover:after {
+    transform: scaleX(1)
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li.selected:after {
+    transform: scaleX(1);
+    border-bottom: 4px solid #d82c50
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li:nth-child(5) {
+    grid-column: 7;
+    -ms-grid-column: 7
+}
+
+.creditors_module--accounts .settlementsTabSelectRow li:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 4px solid #d82c50;
+    padding-top: 1px;
+    transform: scaleX(0);
+    transition: transform .25s ease-in-out
+}
+
+.creditors_module--accounts .creditor_table_wrapper {
+    width: 100%;
+    opacity: 0;
+    grid-row: 3;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    z-index: -9999;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 15px auto 0;
+    transition-property: opacity, z-index
+}
+
+
+/* Creditor Items*/
+
+.creditors_module--accounts .creditor_table_wrapper>div:first-child,
+.creditors_module--accounts .creditor_table_wrapper>div:nth-child(2),
+.creditors_module--accounts .creditor_table_wrapper>div:nth-child(3),
+.creditors_module--accounts .creditor_table_wrapper>div:nth-child(4),
+.creditors_module--accounts .creditor_table_wrapper>div:nth-child(5) {
+    transition-property: opacity;
+    opacity: 0;
+    transform: translateX(0)
+}
+
+.creditors_module--accounts .creditor_table_wrapper.hide {
+    opacity: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper .need_approved_item {
+    transition-duration: 0s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.show {
+    display: flex;
+    opacity: 1;
+    z-index: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper.show .creditor_item_wrapper {
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.show .need_approved_item {
+    height: auto
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortQuery {
+    transition-delay: 1s;
+    z-index: -9999
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortQuery>div:first-child {
+    -webkit-animation: stack-flip-out .5s linear .75s forwards;
+    animation: stack-flip-out .5s linear .75s forwards;
+    transition-duration: .15s;
+    transition-delay: .75s;
+    z-index: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortQuery>div:nth-child(2) {
+    -webkit-animation: stack-in-leave-second .75s linear forwards;
+    animation: stack-in-leave-second .75s linear forwards;
+    transition-duration: 0s;
+    transition-delay: .75s;
+    z-index: -1000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortQuery>div:nth-child(3) {
+    -webkit-animation: stack-in-leave-third .75s linear forwards;
+    animation: stack-in-leave-third .75s linear forwards;
+    transition-duration: 0s;
+    transition-delay: .75s;
+    z-index: -2000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortQuery>div:nth-child(4) {
+    -webkit-animation: stack-in-leave-fourth .75s linear forwards;
+    animation: stack-in-leave-fourth .75s linear forwards;
+    transition-duration: 0s;
+    transition-delay: .75s;
+    z-index: -4000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortQuery>div:nth-child(5) {
+    -webkit-animation: stack-in-leave-last .75s linear forwards;
+    animation: stack-in-leave-last .75s linear forwards;
+    transition-duration: 0s;
+    transition-delay: .75s;
+    z-index: -6000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortOutput {
+    z-index: 0;
+    opacity: 1;
+    transition-delay: 1s;
+    transition-duration: .15s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortOutput>div:first-child {
+    opacity: 1;
+    transition-duration: .15s;
+    transition-delay: 1.15s;
+    z-index: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortOutput>div:nth-child(2) {
+    -webkit-animation: stack-spread-down-second .75s linear 1.15s forwards;
+    animation: stack-spread-down-second .75s linear 1.15s forwards;
+    opacity: 1;
+    transition-duration: .15s;
+    transition-delay: 1.15s;
+    z-index: -1000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortOutput>div:nth-child(3) {
+    -webkit-animation: stack-spread-down-third .75s linear 1.15s forwards;
+    animation: stack-spread-down-third .75s linear 1.15s forwards;
+    opacity: 1;
+    transition-duration: .15s;
+    transition-delay: 1.15s;
+    z-index: -2000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortOutput>div:nth-child(4) {
+    -webkit-animation: stack-spread-down-fourth .75s linear 1.15s forwards;
+    animation: stack-spread-down-fourth .75s linear 1.15s forwards;
+    opacity: 1;
+    transition-duration: .15s;
+    transition-delay: 1.15s;
+    z-index: -4000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateSortOutput>div:nth-child(5) {
+    -webkit-animation: stack-spread-down-last .75s linear 1.15s forwards;
+    animation: stack-spread-down-last .75s linear 1.15s forwards;
+    opacity: 1;
+    transition-duration: .15s;
+    transition-delay: 1.15s;
+    z-index: -4000
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortQuery {
+    z-index: -9999
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortQuery>div:first-child {
+    -webkit-animation: stack-in-leave .25s ease 1.25s forwards;
+    animation: stack-in-leave .25s ease 1.25s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortQuery>div:nth-child(2) {
+    -webkit-animation: stack-in-leave .25s ease .3s forwards;
+    animation: stack-in-leave .25s ease .3s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortQuery>div:nth-child(3) {
+    -webkit-animation: stack-in-leave .25s ease .45s forwards;
+    animation: stack-in-leave .25s ease .45s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortQuery>div:nth-child(4) {
+    -webkit-animation: stack-in-leave .25s ease .6s forwards;
+    animation: stack-in-leave .25s ease .6s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortQuery>div:nth-child(5) {
+    -webkit-animation: stack-in-leave .25s ease .75s forwards;
+    animation: stack-in-leave .25s ease .75s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortOutput {
+    z-index: 0;
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortOutput>div:first-child {
+    -webkit-animation: stack-spread-down .25s ease forwards;
+    animation: stack-spread-down .25s ease forwards;
+    opacity: 1;
+    transition-delay: .15s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortOutput>div:nth-child(2) {
+    -webkit-animation: stack-spread-down .25s ease .3s forwards;
+    animation: stack-spread-down .25s ease .3s forwards;
+    opacity: 1;
+    transition-delay: .3s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortOutput>div:nth-child(3) {
+    -webkit-animation: stack-spread-down .25s ease .45s forwards;
+    animation: stack-spread-down .25s ease .45s forwards;
+    opacity: 1;
+    transition-delay: .45s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortOutput>div:nth-child(4) {
+    -webkit-animation: stack-spread-down .25s ease .6s forwards;
+    animation: stack-spread-down .25s ease .6s forwards;
+    opacity: 1;
+    transition-delay: .6s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animateReSortOutput>div:nth-child(5) {
+    -webkit-animation: stack-spread-down .25s ease .75s forwards;
+    animation: stack-spread-down .25s ease .75s forwards;
+    opacity: 1;
+    transition-delay: .75s
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterRight {
+    transition-duration: 1s, 1s;
+    transition-delay: 0s, 0s;
+    transition-timing-function: step-start, step-start;
+    opacity: 1;
+    z-index: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterRight>div:first-child {
+    transition-duration: .25s;
+    transition-delay: .15s;
+    opacity: 1;
+    -webkit-animation: slide-in-right .25s ease forwards;
+    animation: slide-in-right .25s ease forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterRight>div:nth-child(2) {
+    transition-duration: .25s;
+    transition-delay: .3s;
+    transition-timing-function: step-start;
+    opacity: 1;
+    -webkit-animation: slide-in-right .25s ease .3s forwards;
+    animation: slide-in-right .25s ease .3s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterRight>div:nth-child(3) {
+    transition-duration: .25s;
+    transition-delay: .45s;
+    transition-timing-function: step-start;
+    opacity: 1;
+    -webkit-animation: slide-in-right .25s ease .45s forwards;
+    animation: slide-in-right .25s ease .45s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterRight>div:nth-child(4) {
+    transition-duration: .25s;
+    transition-delay: .6s;
+    transition-timing-function: step-start;
+    opacity: 1;
+    -webkit-animation: slide-in-right .25s ease .6s forwards;
+    animation: slide-in-right .25s ease .6s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterRight>div:nth-child(5) {
+    transition-duration: .25s;
+    transition-delay: .75s;
+    transition-timing-function: step-start;
+    opacity: 1;
+    -webkit-animation: slide-in-right .25s ease .75s forwards;
+    animation: slide-in-right .25s ease .75s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterLeft {
+    transition-duration: 1s, 1s;
+    transition-delay: 0s, 0s;
+    transition-timing-function: step-start, step-start;
+    opacity: 1;
+    z-index: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterLeft>div:first-child {
+    -webkit-animation: slide-in-left .25s ease forwards;
+    animation: slide-in-left .25s ease forwards;
+    transition-duration: .25s;
+    transition-delay: 0s;
+    transition-timing-function: step-start;
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterLeft>div:nth-child(2) {
+    -webkit-animation: slide-in-left .25s ease .3s forwards;
+    animation: slide-in-left .25s ease .3s forwards;
+    transition-duration: .25s;
+    transition-delay: .3s;
+    transition-timing-function: step-start;
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterLeft>div:nth-child(3) {
+    -webkit-animation: slide-in-left .25s ease .45s forwards;
+    animation: slide-in-left .25s ease .45s forwards;
+    transition-duration: .25s;
+    transition-delay: .45s;
+    transition-timing-function: step-start;
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterLeft>div:nth-child(4) {
+    -webkit-animation: slide-in-left .25s ease .6s forwards;
+    animation: slide-in-left .25s ease .6s forwards;
+    transition-duration: .25s;
+    transition-delay: .6s;
+    transition-timing-function: step-start;
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageEnterLeft>div:nth-child(5) {
+    -webkit-animation: slide-in-left .25s ease .75s forwards;
+    animation: slide-in-left .25s ease .75s forwards;
+    transition-duration: .25s;
+    transition-delay: .75s;
+    transition-timing-function: step-start;
+    opacity: 1
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveLeft {
+    transition-duration: 1s, 1s;
+    transition-delay: 1s, 1s;
+    transition-timing-function: steps(1), steps(1);
+    opacity: 0
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveLeft>div:first-child {
+    transition-duration: .25s;
+    transition-delay: .15s;
+    transition-timing-function: steps(1);
+    -webkit-animation: slide-out-left .25s ease forwards;
+    animation: slide-out-left .25s ease forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveLeft>div:nth-child(2) {
+    transition-duration: .15s;
+    transition-delay: .3s;
+    transition-timing-function: steps(1);
+    -webkit-animation: slide-out-left .25s ease .3s forwards;
+    animation: slide-out-left .25s ease .3s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveLeft>div:nth-child(3) {
+    transition-duration: .15s;
+    transition-delay: .45s;
+    transition-timing-function: steps(1);
+    -webkit-animation: slide-out-left .25s ease .45s forwards;
+    animation: slide-out-left .25s ease .45s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveLeft>div:nth-child(4) {
+    transition-duration: .15s;
+    transition-delay: .6s;
+    transition-timing-function: steps(1);
+    -webkit-animation: slide-out-left .25s ease .6s forwards;
+    animation: slide-out-left .25s ease .6s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveLeft>div:nth-child(5) {
+    transition-duration: .15s;
+    transition-delay: .75s;
+    transition-timing-function: steps(1);
+    -webkit-animation: slide-out-left .25s ease .75s forwards;
+    animation: slide-out-left .25s ease .75s forwards
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveRight {
+    transition-duration: 1s, 1s;
+    transition-delay: 1s, 1s;
+    transition-timing-function: steps(1), steps(1)
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveRight>div:first-child {
+    -webkit-animation: slide-out-right .25s ease forwards;
+    animation: slide-out-right .25s ease forwards;
+    -webkit-transform: translateX(1200px);
+    transform: translateX(1200px);
+    transition-duration: .25s;
+    transition-delay: 0s;
+    transition-timing-function: steps(1), ease
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveRight>div:nth-child(2) {
+    -webkit-animation: slide-out-right .25s ease .3s forwards;
+    animation: slide-out-right .25s ease .3s forwards;
+    transition-duration: .15s;
+    transition-delay: .3s;
+    transition-timing-function: steps(1)
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveRight>div:nth-child(3) {
+    -webkit-animation: slide-out-right .25s ease .45s forwards;
+    animation: slide-out-right .25s ease .45s forwards;
+    transition-duration: .15s;
+    transition-delay: .45s;
+    transition-timing-function: steps(1)
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveRight>div:nth-child(4) {
+    -webkit-animation: slide-out-right .25s ease .6s forwards;
+    animation: slide-out-right .25s ease .6s forwards;
+    transition-duration: .15s;
+    transition-delay: .6s;
+    transition-timing-function: steps(1)
+}
+
+.creditors_module--accounts .creditor_table_wrapper.animatePageLeaveRight>div:nth-child(5) {
+    -webkit-animation: slide-out-right .25s ease .75s forwards;
+    animation: slide-out-right .25s ease .75s forwards;
+    transition-duration: .15s;
+    transition-delay: .75s;
+    transition-timing-function: steps(1)
+}
+
+.creditors_module--accounts .creditor_item_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background: #fff;
+    backface-visibility: hidden;
+    margin: 0 auto 2%;
+    border-radius: 8px;
+    box-shadow: 0 4px 13px -5px rgba(0, 0, 0, .4)
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount span {
+    font-size: 26px;
+    line-height: 35px;
+    font-weight: 400
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount .currency {
+    font-size: 15px;
+    line-height: 28px;
+    vertical-align: top;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount .numbertext {
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount .number-suffix {
+    font-size: 16px;
+    line-height: 28px;
+    vertical-align: top;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount_description {
+    width: 100%;
+    text-align: center;
+    /* white-space: nowrap; */
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditor_amount_description span {
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 200;
+    color: #4f6d8d;
+    text-align: center;
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper {
+    width: 100%;
+    height: fit-content;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-top: 1px solid #979797;
+    display: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 2%;
+    margin: 0 auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #979797;
+    padding: 1% 10px 10px;
+    margin: 0 15px 0 auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount span {
+    color: inherit;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount .currency,
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount .number-suffix {
+    font-size: 15px;
+    line-height: 30px;
+    vertical-align: top;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount_description span {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #000;
+    text-align: center;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper {
+    width: 100%;
+    flex-direction: row;
+    margin: 0 auto;
+    display: none;
+    padding-bottom: 2%;
+    justify-content: space-evenly;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .viewOfferFooter {
+    width: 100%;
+    flex-direction: row;
+    margin: 0 auto;
+    /* display: none;*/
+    padding-bottom: 2%
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeePaginate .chevronLeft {
+    fill: #3d3d3d
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeePaginate .chevronLeft.disabled {
+    fill: #dbdbdb
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeePaginate .chevronRight {
+    fill: #3d3d3d
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeePaginate .chevronRight.disabled {
+    fill: #dbdbdb
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .ps_amount {
+    display: block
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .ps_amount span {
+    display: block;
+    width: 100%
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 0;
+    position: relative;
+    min-width: 260px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper h2 {
+    line-height: 24px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentPaginate {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 75px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentPaginate span {
+    display: block;
+    width: 18px;
+    height: 18px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentPaginate span svg {
+    width: 100%;
+    height: 100%;
+    pointer-events: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentPaginate .chevronLeft {
+    fill: #3d3d3d
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentPaginate .chevronLeft.disabled,
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentPaginate .chevronRight.disabled {
+    fill: #dbdbdb
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItemWrapper {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, .1);
+    width: 100%;
+    margin-top: 15px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem {
+    max-height: 175px;
+    overflow-y: scroll
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem .ps_status {
+    color: #0074e1;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul.hide {
+    display: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul.show {
+    display: flex
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul li {
+    list-style-type: none;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    margin: auto;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    height: 40px;
+    border-top: 1px solid #d9e1e9;
+    text-align: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul li span {
+    color: #4f6d8d;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    justify-content: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul li .ps_date {
+    -ms-grid-column: 1
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul li .ps_amount {
+    -ms-grid-column: 2
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem ul li .ps_status {
+    -ms-grid-column: 3
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header {
+    background: url(/portalv2/s/sfsites/c/resource/ndrPortalAssets/images/bgTable.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 625px;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    border-radius: 8px 8px 0 0;
+    flex-direction: column
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header ul {
+    list-style-type: none;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    margin: auto;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header li {
+    justify-content: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    text-align: center;
+    height: 23px;
+    color: #fff;
+    font-weight: 400;
+    display: flex;
+    width: 100%
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header li:first-child {
+    -ms-grid-column: 1
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header li:nth-child(2) {
+    -ms-grid-column: 2
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header li:nth-child(3) {
+    -ms-grid-column: 3
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header span {
+    color: #3b3e42
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header span:first-child {
+    width: 40%;
+    text-align: left;
+    font-weight: 500;
+    padding-left: 0;
+    white-space: nowrap
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header span:nth-child(2) {
+    width: 30%;
+    text-align: center;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .wrapper_header span:nth-child(3) {
+    width: 40%;
+    text-align: center;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    height: 205px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper h2 {
+    line-height: 24px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeePaginate {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 75px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeePaginate span {
+    display: block;
+    width: 18px;
+    height: 18px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeePaginate span svg {
+    width: 100%;
+    height: 100%;
+    pointer-events: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem {
+    width: 100%;
+    line-height: 50px;
+    flex-direction: row;
+    display: flex;
+    border-top: 1px solid #d9e1e9
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem span:first-child {
+    width: 40%;
+    text-align: left;
+    padding-left: 5%
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem span:nth-child(2) {
+    width: 30%;
+    text-align: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem span:nth-child(3) {
+    width: 40%;
+    text-align: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem ul {
+    padding-top: 15px;
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem ul.hide {
+    display: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem ul.show {
+    display: flex
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem ul li {
+    list-style-type: none;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2px 0
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper .creditorFeeItem ul li span {
+    color: #4f6d8d;
+    line-height: 24px;
+    display: block
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditem_expandbtn,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditem_expandbtn {
+    width: 5%;
+    position: absolute;
+    top: 34px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditem_expandbtn--mobile,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditem_expandbtn--mobile {
+    display: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditem_content_wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1%;
+    padding-top: 1%
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowa,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 45%;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowa.--onHold {
+    /*  width: 52%!important*/
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowb {
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowb {
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .onHoldStyle {
+    width: 175px;
+    margin: auto 0 auto auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper {
+    /* width: 30%;
+    max-width: 145px;*/
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: auto;
+    max-width: 180px;
+    width: 100%;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper object {
+    display: block;
+    object-fit: cover;
+    height: 20px;
+    width: 100%;
+    min-width: 140px;
+    max-width: 200px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper svg {
+    width: 100%;
+    height: auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressBarSVG .cls-1 {
+    fill: #cbd2d8
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressBarSVG .cls-2 {
+    fill: #01005c
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressBarSVG .cls-3 {
+    font-size: 15px;
+    font-weight: 500;
+    fill: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressBarSVG .maskprogress-bar rect {
+    transition: all 2s;
+    transition-property: width
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressbar_eyebrow span {
+    line-height: 24px;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressbar_footer {
+    width: 140px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressbar_footer span {
+    line-height: 24px;
+    font-size: 1em;
+    word-wrap: unset
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorIcon {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorIcon img {
+    object-fit: contain;
+    height: 60px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorIcon--col,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorIcon--col {
+    width: 75px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto 0 15px; */
+    align-content: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID {
+    /* padding-left: 30px; */
+    /* padding-top: 10px;*/
+    line-height: 24px;
+    /* margin: auto; */
+    min-width: 175px;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorTitle {
+    text-align: left;
+    min-width: 170px;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorTitle .creditorname {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1em;
+    color: #3b3e42;
+    text-align: left
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorACCT {
+    width: 100%;
+    color: #4f6d8d;
+    text-align: left;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 200;
+    padding-top: 1%
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorPaid {
+    min-width: 100px;
+    width: 35%;
+    border-right: 1px dotted #b1c0d1;
+    padding-top: 1%;
+    line-height: 30px
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorCISF {
+    min-width: 100px;
+    width: 35%;
+    border-right: 1px dotted #b1c0d1;
+    padding-top: 1%;
+    line-height: 30px
+}
+
+.creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorBalance {
+    min-width: 130px;
+    width: 35%;
+    padding-top: 1%;
+    line-height: 30px
+}
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item {
+    padding-bottom: 0
+}
+
+
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 2%;
+    margin: 0 auto
+}
+*/
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow .creditorSummaryCard .creditor_amount span {
+    color: inherit;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500
+}*/
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow .creditorSummaryCard .creditor_amount .currency,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow .creditorSummaryCard .creditor_amount .number-suffix {
+    font-size: 15px;
+    line-height: 30px;
+    vertical-align: top;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow .creditorSummaryCard .creditor_amount_description span {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #000
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow .creditorSummaryCard.--debtReduction .creditor_amount_description span {
+    display: inline-block;
+    width: 75%
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list {
+    height: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 165px;
+    border-radius: 5px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list::-webkit-scrollbar {
+    width: 15px;
+    border-radius: 10px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #f5f5f5
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #4f6c90
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list ul {
+    list-style-type: none;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    flex-direction: column;
+    margin: 0 auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list ul>li:first-child {
+    border-top: none
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .monthlyPayment_list ul li {
+    display: grid;
+    display: -ms-grid;
+    -ms-grid-columns: 85px 50px;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #d9e1e9;
+    height: 35px;
+    line-height: 35px;
+    grid-template-rows: auto;
+    -ms-grid-rows: auto;
+    font-weight: 400
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlementOfferCard {
+    position: relative;
+    border-left: 0!important;
+    border-top: 0!important;
+    border-bottom: 0!important;
+    border-right: 1px solid #979797;
+    border-style: dashed!important;
+    border-radius: 0!important;
+    padding: 0;
+    white-space: normal;
+    height: fit-content!important
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlementOfferCard .creditor_amount {
+    text-align: left
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlementOfferCard .creditor_amount_description {
+    width: 100%;
+    text-align: left!important
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlementOfferCard .creditor_amount_description span {
+    font-size: 14px!important;
+    text-align: center;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlementOfferCard.--monthlyPaymentsList {
+    height: auto!important
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_creditor {
+    justify-content: flex-start!important;
+    /* width: 45%*/
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_creditor .creditorIcon--col {
+    margin-right: 0!important
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditor_item_wrapper {
+    position: unset
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_description {
+    /* width: 100%!important*/
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_description p {
+    line-height: 24px;
+    font-size: 16px;
+    text-align: left;
+    color: #000
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_description .settlement_approve_link {
+    cursor: pointer;
+    color: #18027a;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_approve_footer {
+    justify-content: center;
+    margin-bottom: 15px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_approve_footer span {
+    pointer-events: none;
+    margin: auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .tooltip {
+    position: absolute;
+    right: -15px;
+    background: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #4f6c90;
+    text-align: center!important;
+    border: 1px solid #979797
+}
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryWrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: -70px
+}
+
+
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryCard {
+    background: transparent;
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #979797;
+    padding: 5px 10px 10px;
+    margin: 0 auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryCard .creditor_amount span {
+    color: inherit;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryCard .creditor_amount .currency,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryCard .creditor_amount .number-suffix {
+    font-size: 15px;
+    line-height: 30px;
+    vertical-align: top;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryCard .creditor_amount_description span {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #000
+}
+*/
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditem_content_wrapper {
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column
+}*/
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_description {
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .toolTipModule {
+    top: 5px;
+    right: 25px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .cta-button-link {
+    padding: 0
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .toolTipModule .toolTipModule--wrapper {
+    z-index: 5000;
+    background: #eee;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .5)
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .toolTipModule .bottom:after {
+    border-color: #eee transparent transparent
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .toolTipModule--description {
+    padding-top: 10px;
+    padding-right: 5px;
+    font-weight: 500;
+    color: #000
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1%;
+    padding-top: 1%
+}
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowa {
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}*/
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowa.--onHold {
+    /*  width: 52%!important*/
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowb {
+    /*  width: 55%;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .onHoldStyle {
+    width: 175px;
+    margin: auto 0 auto auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper {
+    /*width: 30%;*/
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: auto;
+    margin-top: 0;
+    max-width: 180px;
+    width: 100%;
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper object {
+    display: block;
+    object-fit: cover;
+    height: 20px;
+    width: 100%;
+    min-width: 140px;
+    max-width: 200px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper svg {
+    width: 100%;
+    height: auto
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressBarSVG .cls-1 {
+    fill: #cbd2d8
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressBarSVG .cls-2 {
+    fill: #01005c
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressBarSVG .cls-3 {
+    font-size: 15px;
+    font-weight: 500;
+    fill: #fff;
+    font-family: Roboto, sans-serif
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressBarSVG .maskprogress-bar rect {
+    transition: all 2s;
+    transition-property: width
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressbar_eyebrow span {
+    line-height: 24px;
+    font-size: 1em;
+    font-weight: 500
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressbar_footer {
+    width: 140px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper .progressbar_footer span {
+    line-height: 24px;
+    font-size: 1em;
+    word-wrap: unset
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorIcon {
+    width: 60px;
+    height: 60px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorIcon img {
+    object-fit: contain;
+    height: 60px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID {
+    /* padding-left: 10px; */
+    padding-top: 10px;
+    line-height: 24px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID .creditorTitle {
+    text-align: left
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID .creditorTitle .creditorname {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1em;
+    color: #3b3e42;
+    text-align: left
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID .creditorACCT {
+    width: 100%;
+    color: #4f6d8d;
+    text-align: left;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 200;
+    padding-top: 1%
+}
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorPaid {
+     width: 35%;
+    border-right: 1px dotted #b1c0d1;
+    padding-top: 1%;
+    line-height: 30px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorCISF {
+
+    border-right: 1px dotted #b1c0d1;
+    padding-top: 1%;
+    line-height: 30px
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorBalance {
+ 
+    padding-top: 1%;
+    line-height: 30px
+}
+
+*/
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper .approved_item_wrapper .creditor_amount_description,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditor_amount_description {
+    height: 40px
+}
+
+.creditors_module--accounts .creditor_item_wrapper .approved_item_wrapper .creditorSummaryRow,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow {
+    padding: 0!important
+}
+
+
+/*
+.creditors_module--accounts .creditor_item_wrapper .approved_item_wrapper .creditorSummaryRow div:last-child,
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow div:last-child {
+    border-right: none!important
+}
+*/
+
+.creditor_footer {
+    text-align: right;
+   /* width: 100%; */
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    margin: 0 auto;
+    grid-row: 4;
+    -ms-grid-row: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creditor_footer .slds-button {
+    height: fit-content;
+    background: #00aae7;
+    color: #fff;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.creditor_footer .slds-button:disabled {
+    background: #e7ebf1;
+    cursor: not-allowed;
+}
+
+.creditor_footer .slds-icon {
+    --sds-c-icon-color-foreground-default: #fff;
+}
+
+.creditor_footer ul {
+    /* width: 100%; */
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin: 0
+}
+
+@media screen and (max-width: 720px) {
+    .creditor_footer ul {}
+}
+
+.creditor_footer ul li {
+    font-size: 16px;
+    line-height: 18px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    padding: 9px 15px;
+    color: #4f6d8d;
+    cursor: pointer
+}
+
+.creditor_footer ul li.selectedPage {
+    font-weight: 400;
+    pointer-events: none;
+    cursor: default;
+    border: 1.1px solid #20037d;
+}
+
+.creditor_footer ul li.selectedPage:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    /* border-bottom: 1.1px solid #20037d; */
+    padding-top: 1px;
+    font-weight: 200
+}
+
+.accountsStatusType--section {
+    margin-top: 30px
+}
+
+.accountsStatusType--section h2 {
+    font-size: 18px;
+    padding: 0;
+    font-weight: 500;
+    padding-left: 0!important
+}
+
+.type--issuingPayments {
+    color: #20037d
+}
+
+.type--paidinFull {
+    color: #0074e1
+}
+
+.type--enrolled {
+    color: #000
+}
+
+.type--finalizingOffer {
+    color: #4f81bd
+}
+
+.type--reworkingOffer {
+    color: #00467d
+}
+
+.type--callUs,
+.creditors_module--accounts .creditorTabSelectRow .navigation-item-title.type--callUs {
+    color: #d82c50; 
+}
+
+.creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItem .ps_status {
+    color: #0074e1;
+    font-weight: 500
+}
+
+.settlement_details {
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1
+}
+
+.settlement_details .settlement_details_item {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px
+}
+
+.detail_footer {
+    z-index: 99;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    text-align: center
+}
+
+.detail_footer span {
+    font-weight: 500;
+}
+
+.ndr-button {
+    color: #ffffff;
+    border-radius: 4px;
+    opacity: 1;
+    padding-left: var(--lwc-varSpacingHorizontalMedium, spacingMedium);
+    padding-right: var(--lwc-varSpacingHorizontalMedium, spacingMedium);
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    background: -moz-linear-gradient( 99.41% -9.26% -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    background: -webkit-linear-gradient( -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    background: -webkit-gradient( linear, 99.41% -9.26%, 3.04% 106.32%, color-stop(0, rgba(220, 64, 77, 1)), color-stop(0.3048, rgba(219, 59, 78, 1)), color-stop(0.648, rgba(216, 46, 81, 1)), color-stop(1, rgba(211, 24, 85, 1)));
+    background: -o-linear-gradient( -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    background: -ms-linear-gradient( -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#DC404D', endColorstr='#D31855' ,GradientType=0)";
+    background: linear-gradient( 256.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+}
+
+.slds-button {
+    height: 3.5em;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.slds-modal__footer {
+    text-align: left;
+    border: none;
+    /*border-top-style: 1px solid #babdc2;*/
+}
+
+.neutral-button {
+    border: 1px solid black;
+    border-radius: 4px;
+    line-height: normal;
+    color: #4f6d8d;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.closeBtn {
+    justify-content: flex-end;
+    margin: auto 0 auto auto;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.settlement_reached_wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.slds-modal__content h2,
+.slds-modal__content .closeBtn {
+    color: #20037d;
+}
+
+.detail_labels {
+    width: 185px;
+    font-weight: 500;
+    text-align: left
+}
+
+.messages p {
+    text-align: center;
+}
+
+.messages p.error {
+    color: red;
+}
+
+.messages p.success {
+    color: #0074e1;
+}
+
+.ndr-button {
+    color: #ffffff;
+    border-radius: 4px;
+    opacity: 1;
+    padding-left: var(--lwc-varSpacingHorizontalMedium, spacingMedium);
+    padding-right: var(--lwc-varSpacingHorizontalMedium, spacingMedium);
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    background: -moz-linear-gradient( 99.41% -9.26% -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    background: -webkit-linear-gradient( -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    background: -webkit-gradient( linear, 99.41% -9.26%, 3.04% 106.32%, color-stop(0, rgba(220, 64, 77, 1)), color-stop(0.3048, rgba(219, 59, 78, 1)), color-stop(0.648, rgba(216, 46, 81, 1)), color-stop(1, rgba(211, 24, 85, 1)));
+    background: -o-linear-gradient( -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    background: -ms-linear-gradient( -166.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#DC404D', endColorstr='#D31855' ,GradientType=0)";
+    background: linear-gradient( 256.32deg, rgba(220, 64, 77, 1) 0%, rgba(219, 59, 78, 1) 30.48%, rgba(216, 46, 81, 1) 64.8%, rgba(211, 24, 85, 1) 100%);
+}
+
+
+/*View Offer Modal*/
+
+.creditorIcon {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.creditorIcon img {
+    object-fit: contain;
+    height: 60px
+}
+
+.creditorname {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1em;
+    color: #3b3e42;
+    text-align: left
+}
+
+.creditorID .detail_fields {
+    margin: auto;
+}
+
+.cta-button-blue {
+    background: #0074e1;
+    color: white;
+}
+
+.creditorACCT {
+    width: 100%;
+    color: #4f6d8d;
+    text-align: left;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 200;
+    padding-top: 1%
+}
+
+.monthlyPayment_list ul>li:first-child {
+    border-top: none
+}
+
+.monthlyPayment_list ul {
+    list-style-type: none;
+    height: fit-content;
+    display: flex;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left: 0;
+}
+
+.monthlyPayment_list ul li {
+    display: grid;
+    display: -ms-grid;
+    -ms-grid-columns: 85px 50px;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #d9e1e9;
+    height: 35px;
+    line-height: 35px;
+    grid-template-rows: auto;
+    -ms-grid-rows: auto;
+    font-weight: 400
+}
+
+.creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowa {
+    /* width: 50%; */
+}
+
+@media (max-width: 1200px) {
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID {
+        margin-top: 10px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop {
+        flex-direction: column
+    }
+    .need_approved_item .creditorRowTop {
+        padding-left: 0;
+        padding-right: 0
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditor_amount_description {
+        height: 40px
+    }
+    /*
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryWrapper {
+        padding-left: 0;
+        padding-right: 0
+    }*/
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .onHoldStyle .creditorBalance {
+        width: 100%;
+        margin: auto auto auto 0
+    }
+    .creditors_module--accounts {
+        -ms-grid-rows: 80px 1fr;
+        grid-template-rows: 80px 1fr
+    }
+    .creditors_module--accounts.hidesort {
+        -ms-grid-rows: 40px 1fr;
+        grid-template-rows: 40px 1fr;
+    }
+    .creditors_module--accounts .settlement_approve_footer .cta-button-link {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance {
+        line-height: 24px;
+        min-width: 90px;
+        white-space: normal
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance .currency,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance .number-suffix {
+        line-height: 20px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper object {
+        min-width: 105px;
+        line-height: 20px;
+        font-size: 12px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorCISF,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorPaid {
+        padding-top: 0;
+        line-height: 25px
+    }
+    .creditors_module--accounts .creditor_header_row {
+        height: 75px;
+        -ms-grid-row: 1
+    }
+    .creditors_module--accounts .creditor_table_wrapper {
+        padding-top: 0;
+        margin-top: 0
+    }
+    .creditors_module--accounts .sort_wrapper {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        top: 40px;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start
+    }
+    .creditors_module--accounts .sort_wrapper select {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorACCT {
+        font-size: 1em;
+    }
+    .creditors_module--accounts .creditorTabSelectRow,
+    .creditors_module--accounts .settlementsTabSelectRow {
+        display: none
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        margin-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 4px solid #d1dce8;
+        margin-bottom: 15px;
+        grid-row: 2
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+        margin: auto 0 auto auto
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col .sortLabel {
+        color: #20037d;
+        padding-right: 5px;
+        align-self: center;
+        font-weight: 500;
+        width: 50px;
+        text-align: left;
+        height: fit-content
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select {
+        width: 100%;
+        right: 0;
+        background-color: #fcfdfe;
+        height: 40px;
+        border: 1px solid #d1dce7;
+        border-radius: 6px;
+        color: #4f6d8d;
+        margin-bottom: 15px;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+        overflow: hidden;
+        padding: 2px 30px 2px 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-sizing: border-box;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+        appearance: none;
+        cursor: default
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select:hover {
+        border-color: #888
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+        box-shadow: 0 0 0 3px -moz-mac-focusring;
+        color: #222;
+        outline: none
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select::-ms-expand {
+        display: none
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col .navigation-item-title {
+        font-weight: 500;
+        font-size: 14px;
+        color: #4d4d4d;
+        text-transform: uppercase;
+        background: #fff;
+        z-index: 99999
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col ul {
+        list-style-type: none;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        display: -ms-grid;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-padding-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        margin: auto;
+        flex-direction: column;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: none;
+        -ms-grid-columns: initial;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li {
+        white-space: nowrap;
+        padding-left: 1%;
+        padding-right: 1%;
+        text-align: center;
+        height: 35px;
+        cursor: pointer
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li.isactive {
+        color: red
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li:hover .navigation-item-title {
+        color: #20037d
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li.selected:after {
+        transform: scaleX(1);
+        border-bottom: 4px solid #d82c50
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li:nth-child(5) {
+        grid-row: initial;
+        -ms-grid-row: initial
+    }
+    .creditors_module--accounts .type_options_dropdown {
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+        width: 40%;
+        height: 24px;
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+        box-sizing: border-box
+    }
+    .creditors_module--accounts .settlementsTabSelectRow ul {
+        grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr 1fr
+    }
+    .creditors_module--accounts .settlement_offer_creditor {
+        width: 100%!important
+    }
+    .approved_item_wrapper .creditorRowTop .creditorID {
+        width: 75%!important
+    }
+    .approved_item_wrapper .creditorTop--rowb .creditorSummaryRow {
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
+        grid-gap: 10px
+    }
+    .approved_item_wrapper .creditorTop--rowb .creditorSummaryRow div:nth-child(5) {
+        -ms-grid-column-span: 2;
+        -ms-grid-column: 1;
+        grid-column: 1/span 2;
+        grid-row: 3/span 4;
+        -ms-grid-row-span: 4;
+        -ms-grid-row: 3;
+        border: none
+    }
+    .need_approved_item .creditorIcon--col {
+        margin-left: 0
+    }
+    .need_approved_item .creditorSummaryRow {
+        padding-left: 30px;
+        padding-right: 30px
+    }
+    .need_approved_item .creditorRowTop {
+        padding-left: 40px;
+        padding-right: 40px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditor_amount_description {
+        height: 20px
+    }
+    /*
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryWrapper {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 15px
+    }*/
+    /*
+    .creditors_module--accounts .creditor_table_wrapper .need_approved_item {
+        padding-bottom: 0!important
+    }*/
+    .creditors_module--accounts .creditor_item_wrapper .default_creditor_item .creditorRowTop .onHoldStyle .creditorBalance {
+        width: 160px;
+        margin: auto 0 auto auto
+    }
+    .creditors_module--accounts .approved_item_wrapper .creditor_amount_description,
+    .creditors_module--accounts .need_approved_item .creditor_amount_description {
+        height: fit-content
+    }
+    .accounts_module--section {
+        padding-top: 20px!important
+    }
+    /*
+    .creditors_module--accounts .need_approved_item .creditorSummaryRow {
+        grid-template-columns: 1fr 1fr!important;
+        -ms-grid-columns: 1fr 1fr!important;
+        grid-template-rows: 60px 60px 60px!important;
+        -ms-grid-rows: 60px 60px 60px!important
+    }
+    .creditors_module--accounts .approved_item_wrapper .creditorSummaryRow {
+        grid-template-columns: 1fr 1fr!important;
+        -ms-grid-columns: 1fr 1fr!important;
+        grid-template-rows: 60px 60px!important;
+        -ms-grid-rows: 60px 60px!important
+    }*/
+    /*
+    .creditors_module--accounts .need_approved_itemdiv:last-child {
+        grid-column: 1/span 2;
+        -ms-grid-column-span: 2;
+        -ms-grid-column: 1
+    }/
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow>div:nth-child(2),
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow>div:nth-child(4),
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryRow>div:nth-child(6) {
+        border: none;
+        border-style: none!important
+    }
+    .creditors_module--accounts .need_approved_itemdiv:last-child {
+        grid-column: 3/span 4;
+        -ms-grid-column-span: 4;
+        -ms-grid-column: 3
+    }
+    .approved_item_wrapper .creditorTop--rowa,
+    .approved_item_wrapper .creditorTop--rowb {
+        width: 100%!important
+    }
+    .creditors_module--accounts .approved_item_wrapper div:nth-child(2),
+    .creditors_module--accounts .approved_item_wrapper div:nth-child(4),
+    .creditors_module--accounts .approved_item_wrapper div:nth-child(6) {
+        border-right: none!important
+    }
+    .creditors_module--accounts .approved_item_wrapper .creditorID {
+        width: 100%!important
+    }
+    .creditors_module--accounts .approved_item_wrapperdiv:last-child {
+        grid-column: 1/span 2;
+        -ms-grid-column-span: 2;
+        -ms-grid-column: 1
+    }
+    */
+    .creditors_module--accounts .settlement_offer_creditor,
+    .creditors_module--accounts .settlement_offer_creditor .creditorRowTop--rowb {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_footer ul {
+        margin: 0 5px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .default_creditor_item .creditor_amount_description span {
+        font-size: 12px
+    }
+    .creditors_module--accounts {
+        margin-top: 0
+    }
+    .creditors_module--accounts h2 {
+        padding-top: 10px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .default_creditor_item {
+        box-shadow: 0 4px 13px -5px rgba(0, 0, 0, .4)
+    }
+    .creditors_module--accounts .creditor_item_wrapper {
+        padding-bottom: 60px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.--onHold {
+        padding-bottom: 0
+    }
+    .--monthlyPaymentsList {
+        grid-column: 1/span 2
+    }
+    .creditors_module--accounts .creditor_table_wrapper,
+    .creditors_module--accounts .monthlyPayment_list {
+        margin-top: 15px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditem_expandbtn,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditem_expandbtn {
+        display: none
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditem_expandbtn--mobile,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditem_expandbtn--mobile {
+        position: absolute;
+        display: block;
+        bottom: 15px;
+        right: 50%
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditem_expandbtn--mobile svg,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditem_expandbtn--mobile svg {
+        width: 15px;
+        height: auto;
+        pointer-events: none
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorID .creditorTitle {
+        line-height: 18px;
+        padding: 0
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper {
+        border-top: none
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow {
+        display: grid;
+        display: -ms-grid;
+        grid-column-gap: 10px;
+        grid-row-gap: 15px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 60px 60px 60px;
+        -ms-grid-rows: 60px 60px 60px 60px;
+        -ms-grid-columns: 1fr
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper {
+        flex-direction: column
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorFeeWrapper,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop {
+        flex-direction: column;
+        padding-top: 12px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowa {
+        width: 100%;
+        padding-bottom: 15px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowa.--onHold {
+        /* width: 100%!important*/
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowb {
+        border-top: 1px dashed #979797;
+        padding-top: 15px;
+        width: 100%;
+        padding-bottom: 10px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper {
+        /* width: 50%;*/
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID {
+        padding-left: 5px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow {
+        display: grid;
+        display: -ms-grid;
+        grid-column-gap: 10px;
+        grid-row-gap: 15px;
+        grid-template-columns: 1fr;
+        -ms-grid-columns: 1fr;
+        grid-template-rows: 60px 60px 60px 60px;
+        -ms-grid-rows: 60px 60px 60px 60px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper {
+        height: auto
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount .numbertext {
+        font-size: 18px;
+        line-height: 24px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount .currency,
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount .number-suffix {
+        font-size: 12px;
+        line-height: 20px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard {
+        height: 60px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard .creditor_amount span {
+        font-size: 18px;
+        line-height: 24px
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper .creditorSummaryRow .creditorSummaryCard {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorSummaryWrapper {
+        height: auto
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowa,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowa {
+        justify-content: space-around;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper {
+        margin: 0;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorIcon--col {
+        margin-left: 0;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowa,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowb {
+        width: 100%;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_description {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorID {
+        margin-top: 10px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop {
+        flex-direction: column
+    }
+    .need_approved_item .creditorRowTop {
+        padding-left: 0;
+        padding-right: 0
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditor_amount_description {
+        height: 40px
+    }
+    /* .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorSummaryWrapper {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 15px
+    }*/
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .onHoldStyle .creditorBalance {
+        width: 100%;
+        margin: auto auto auto 0
+    }
+    .creditors_module--accounts {
+        -ms-grid-rows: 80px 1fr;
+        grid-template-rows: 80px 1fr
+    }
+    .creditors_module--accounts .settlement_approve_footer .cta-button-link {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance {
+        line-height: 24px;
+        min-width: 90px;
+        white-space: normal
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance .currency,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance .number-suffix {
+        line-height: 20px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper object {
+        min-width: 105px;
+        line-height: 20px;
+        font-size: 12px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorBalance,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorCISF,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorPaid {
+        padding-top: 0;
+        line-height: 25px
+    }
+    .creditors_module--accounts .creditor_header_row {
+        height: 75px;
+        -ms-grid-row: 1
+    }
+    .creditors_module--accounts .creditor_table_wrapper {
+        padding-top: 0;
+        margin-top: 0
+    }
+    .creditors_module--accounts .sort_wrapper {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        top: 40px;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start
+    }
+    .creditors_module--accounts .sort_wrapper select {
+        width: 100%
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorACCT {
+        font-size: 1em;
+    }
+    .creditors_module--accounts .creditorTabSelectRow,
+    .creditors_module--accounts .settlementsTabSelectRow {
+        display: none
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        margin-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 4px solid #d1dce8;
+        margin-bottom: 15px;
+        grid-row: 2
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+        margin: auto 0 auto auto
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col .sortLabel {
+        color: #20037d;
+        padding-right: 5px;
+        align-self: center;
+        font-weight: 500;
+        width: 50px;
+        text-align: left;
+        height: fit-content
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select {
+        width: 100%;
+        right: 0;
+        background-color: #fcfdfe;
+        height: 40px;
+        border: 1px solid #d1dce7;
+        border-radius: 6px;
+        color: #4f6d8d;
+        margin-bottom: 15px;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+        overflow: hidden;
+        padding: 2px 30px 2px 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-sizing: border-box;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+        appearance: none;
+        cursor: default
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select:hover {
+        border-color: #888
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+        box-shadow: 0 0 0 3px -moz-mac-focusring;
+        color: #222;
+        outline: none
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col select::-ms-expand {
+        display: none
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col .navigation-item-title {
+        font-weight: 500;
+        font-size: 14px;
+        color: #4d4d4d;
+        text-transform: uppercase;
+        background: #fff;
+        z-index: 99999
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col ul {
+        list-style-type: none;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        display: -ms-grid;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-padding-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        margin: auto;
+        flex-direction: column;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: none;
+        -ms-grid-columns: initial;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li {
+        white-space: nowrap;
+        padding-left: 1%;
+        padding-right: 1%;
+        text-align: center;
+        height: 35px;
+        cursor: pointer
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li.isactive {
+        color: red
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li:hover .navigation-item-title {
+        color: #20037d
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li.selected:after {
+        transform: scaleX(1);
+        border-bottom: 4px solid #d82c50
+    }
+    .creditors_module--accounts .mobileCreditorTabSelectRow .type_options_col li:nth-child(5) {
+        grid-row: initial;
+        -ms-grid-row: initial
+    }
+    .creditors_module--accounts .type_options_dropdown {
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+        width: 40%;
+        height: 24px;
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+        box-sizing: border-box
+    }
+    .creditors_module--accounts .settlementsTabSelectRow ul {
+        grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr 1fr
+    }
+    .creditors_module--accounts .settlement_offer_creditor {
+        width: 100%!important
+    }
+    .approved_item_wrapper .creditorTop--rowb .creditorSummaryRow div:nth-child(5) {
+        grid-row: 3/span 4;
+        -ms-grid-row-span: 4
+    }
+}
+
+@media (max-width: 500px) {
+    .creditor_detail_wrapper {
+        width: 100%;
+    }
+    .creditors_module .creditor_header_row {
+        display: flex;
+        flex-direction: column;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .--onHold .progressbar_wrapper {
+        margin-left: 0;
+    }
+    .creditors_module--accounts[c-ndrPortalCreditorAccounts_ndrPortalCreditorAccounts] .creditor_item_wrapper .creditorRowTop[c-ndrPortalCreditorAccounts_ndrPortalCreditorAccounts] .progressbar_wrapper[c-ndrPortalCreditorAccounts_ndrPortalCreditorAccounts] {
+        max-width: unset;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper .progressbar_eyebrow {
+        margin-right: 10px;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .--onHold .progressbar_wrapper .progressbar_eyebrow {
+        margin-right: 0px;
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorRowTop .progressbar_wrapper .progressbar_eyebrow .progressbar_svg {
+        padding-left: 10px;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .settlement_offer_description {
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .progressbar_wrapper,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .progressbar_wrapper {
+        flex-direction: row;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorTitle {
+        min-width: unset;
+        max-width: 160px;
+    }
+    .creditors_module--accounts .approved_item_wrapper .creditorSummaryRow {
+        grid-template-columns: 125px 125px!important;
+        -ms-grid-columns: 125px 125px!important;
+        grid-template-rows: 60px 60px 60px!important;
+        -ms-grid-rows: 60px 60px 60px!important
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditor_amount .numbertext {
+        font-size: 18px;
+        line-height: 24px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditor_amount .currency,
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditor_amount .number-suffix {
+        font-size: 12px;
+        line-height: 20px
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditor_amount span {
+        font-size: 18px;
+        line-height: 24px
+    }
+    .creditor_header_row {
+        display: flex;
+        flex-direction: column
+    }
+    select::-ms-expand {
+        display: block
+    }
+    .creditors_module .creditor_item_wrapper .creditorPSWrapper .creditorFeeWrapper,
+    .creditors_module .creditor_item_wrapper .creditorPSWrapper .creditorPaymentWrapper .creditorPaymentItemWrapper {
+        height: fit-content
+    }
+    .creditors_module .creditor_item_wrapper .creditorRowTop .progressbar_wrapper object {
+        min-width: 105px
+    }
+    .creditors_module .creditor_item_wrapper .creditorRowTop .creditorIcon {
+        width: 40px;
+        height: 40px
+    }
+}
+
+@-webkit-keyframes stack-in-leave {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    25% {}
+    54% {}
+    100% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+}
+
+@keyframes stack-in-leave {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    25% {}
+    54% {}
+    100% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+}
+
+@-webkit-keyframes stack-in-leave-second {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    75% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+}
+
+@keyframes stack-in-leave-second {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    75% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+}
+
+@-webkit-keyframes stack-in-leave-third {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    100% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+}
+
+@keyframes stack-in-leave-third {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    100% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+}
+
+@-webkit-keyframes stack-in-leave-fourth {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    75% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    100% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+}
+
+@keyframes stack-in-leave-fourth {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    75% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    100% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+}
+
+@-webkit-keyframes stack-in-leave-last {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    75% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+    100% {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px);
+    }
+}
+
+@keyframes stack-in-leave-last {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    75% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+    100% {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px);
+    }
+}
+
+@-webkit-keyframes stack-flip-out {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    25% {}
+    54% {}
+    100% {
+        -webkit-transform: rotateX(-360deg);
+        transform: rotateX(-360deg);
+    }
+}
+
+@keyframes stack-flip-out {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    25% {}
+    54% {}
+    100% {
+        -webkit-transform: rotateX(-360deg);
+        transform: rotateX(-360deg);
+    }
+}
+
+@-webkit-keyframes stack-spread-down {
+    0% {
+        -webkit-transform: translateY(120px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes stack-spread-down {
+    0% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes stack-spread-down-second {
+    0% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes stack-spread-down-second {
+    0% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes stack-spread-down-third {
+    0% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    75% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes stack-spread-down-third {
+    0% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    75% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes stack-spread-down-fourth {
+    0% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+    25% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    75% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes stack-spread-down-fourth {
+    0% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+    25% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    75% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes stack-spread-down-last {
+    0% {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px);
+    }
+    25% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes stack-spread-down-last {
+    0% {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px);
+    }
+    25% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px);
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px);
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes slide-out-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0px);
+    }
+    50% {}
+    100% {
+        -webkit-transform: translateX(-1200px);
+        transform: translateX(-1200px);
+    }
+}
+
+@keyframes slide-out-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0px);
+    }
+    50% {}
+    100% {
+        -webkit-transform: translateX(-1200px);
+        transform: translateX(-1200px);
+    }
+}
+
+@-webkit-keyframes slide-out-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0px);
+    }
+    100% {
+        -webkit-transform: translateX(1200px);
+        transform: translateX(1200px);
+    }
+}
+
+@keyframes slide-out-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0px);
+    }
+    100% {
+        -webkit-transform: translateX(1200px);
+        transform: translateX(1200px);
+    }
+}
+
+@-webkit-keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1200px);
+        transform: translateX(-1200px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1200px);
+        transform: translateX(-1200px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(1200px);
+        transform: translateX(1200px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(1200px);
+        transform: translateX(1200px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes stack-in-leave {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+}
+
+@keyframes stack-in-leave {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+}
+
+@-webkit-keyframes stack-in-leave-second {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+}
+
+@keyframes stack-in-leave-second {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+}
+
+@-webkit-keyframes stack-in-leave-third {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    to {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+}
+
+@keyframes stack-in-leave-third {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    to {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+}
+
+@-webkit-keyframes stack-in-leave-fourth {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    75% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    to {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+}
+
+@keyframes stack-in-leave-fourth {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    75% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    to {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+}
+
+@-webkit-keyframes stack-in-leave-last {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    75% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+    to {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px)
+    }
+}
+
+@keyframes stack-in-leave-last {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    75% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+    to {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px)
+    }
+}
+
+@-webkit-keyframes stack-flip-out {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0)
+    }
+    to {
+        -webkit-transform: rotateX(-1turn);
+        transform: rotateX(-1turn)
+    }
+}
+
+@keyframes stack-flip-out {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0)
+    }
+    to {
+        -webkit-transform: rotateX(-1turn);
+        transform: rotateX(-1turn)
+    }
+}
+
+@-webkit-keyframes stack-spread-down {
+    0% {
+        -webkit-transform: translateY(120px)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes stack-spread-down {
+    0% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes stack-spread-down-second {
+    0% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes stack-spread-down-second {
+    0% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    25% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes stack-spread-down-third {
+    0% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes stack-spread-down-third {
+    0% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    25% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    50% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes stack-spread-down-fourth {
+    0% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+    25% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes stack-spread-down-fourth {
+    0% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+    25% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    50% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    75% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes stack-spread-down-last {
+    0% {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px)
+    }
+    25% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes stack-spread-down-last {
+    0% {
+        -webkit-transform: translateY(-470px);
+        transform: translateY(-470px)
+    }
+    25% {
+        -webkit-transform: translateY(-350px);
+        transform: translateY(-350px)
+    }
+    50% {
+        -webkit-transform: translateY(-240px);
+        transform: translateY(-240px)
+    }
+    75% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@media (max-width: 375px) {
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorTop--rowb,
+    .creditors_module--accounts .creditor_item_wrapper.need_approved_item .creditorRowTop .creditorTop--rowb {
+        /*  width: 55%;*/
+        flex-direction: column;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper .creditorPaymentWrapper:nth-child(2) {
+        margin-top: 15px;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorTitle .creditorname {
+        padding-left: 15px;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorRowTop .creditorID .creditorACCT {
+        padding-left: 15px;
+    }
+    .creditor_detail_wrapper {
+        display: flex;
+        width: 100%;
+        padding: var(--lwc-spacingSmall, 0.75rem);
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorPaid {
+        width: 100%;
+        border-right: none;
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorCISF {
+        width: 100%;
+        border-right: none;
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditorRowTop .creditorBalance {
+        width: 100%;
+    }
+    .creditors_module--accounts .creditor_item_wrapper .creditem_content_wrapper {
+        width: 100%;
+        padding-left: 0;
+    }
+    .creditors_module--accounts .creditor_item_wrapper.default_creditor_item .creditorPSWrapper {
+        padding: var(--lwc-spacingXSmall, 0.5rem);
+    }
+    .module--row {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

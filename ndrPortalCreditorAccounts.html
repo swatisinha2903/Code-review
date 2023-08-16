@@ -1,0 +1,484 @@
+<template>
+  <div data-id="credwrapper" class="slds-container_x-large slds-container_center  slds-p-horizontal_small">
+    <div class="module--row accounts_module--section creditors_module--accounts slds-p-horizontal_small slds-is-relative">
+      <template if:true={isLoading}>
+        <c-ndr-portal-app-spinner></c-ndr-portal-app-spinner>
+    </template>
+<template if:false={isLoading}>
+            <div class="creditor_header_row">
+        <h2>Creditors Accounts</h2>
+      
+    
+        
+    
+        <div class="sort_wrapper"><span class="sortLabel">Sort:</span><select onchange={onSortHandler}>
+            <option value="Status(All-Priority-First)">Status</option>
+            <option value="Alphabetically(AZ)">Alphabetically</option>
+          </select></div>
+      </div>
+      <div class="mobileCreditorTabSelectRow">
+        <div class="type_options_col" ><span class="sortLabel">Filter: </span><select onchange={handleCredTypeSelect}>
+            <option value="All" data-indexrange={AllPageIndex} data-lookup={AllDirectoryIndex} class="navigation-item-title">All
+              ({typeCountAll})
+            </option>
+            <option value="Needs Your Approval" data-indexrange={NeedApprovalPageIndex} data-lookup={NeedApprovalDirectoryIndex} class="navigation-item-title type--callUs">Settlements
+              -- Need Approval ({typeCountNeedApproval})</option>
+              <option value="Call Us" data-indexrange={CallUsPageIndex} data-lookup={CallUsDirectoryIndex} class="navigation-item-title type--callUs">Call Us ({typeCountCallUs})
+              </option>
+              <option value="Enrolled" data-indexrange={EnrolledPageIndex} data-lookup={EnrolledDirectoryIndex} class="navigation-item-title">Enrolled ({typeCountEnrolled})
+              </option>
+              <option value="Reworking Offer" data-indexrange={ReworkingOfferPageIndex} data-lookup={ReworkingOfferDirectoryIndex} class="navigation-item-title">
+                Reworking Offer ({typeCountReworkingOffer})</option>
+                <option value="Finalizing Offer" data-indexrange={FinalizingOfferPageIndex} data-lookup={FinalizingOfferDirectoryIndex} class="navigation-item-title">
+                  Finalizing
+                  Offer ({typeCountFinalizingOffer})</option>
+            <option value="Issuing Payments" data-indexrange={IssuingPaymentsPageIndex} data-lookup={IssuingPaymentsDirectoryIndex} class="navigation-item-title">Issuing
+              Payments ({typeCountIssuingPayments})</option>
+        
+            <option value="Paid In Full" data-indexrange={PaidinFullPageIndex} data-lookup={PaidinFullDirectoryIndex} class="navigation-item-title">Paid in Full
+              ({typeCountPaidInFull})</option>
+      
+         
+       
+       
+          </select></div>
+      </div>
+      <div class="creditorTabSelectRow">
+        <ul>
+          <li tabindex="0" class="navigation-item-title selected" data-indexrange={AllPageIndex} data-lookup={AllDirectoryIndex}  data-type ="All" onkeypress={handleCredTypeSelect} onclick={handleCredTypeSelect}>All ({typeCountAll})</li>
+          <li tabindex="0" data-type ="Needs Your Approval" data-indexrange={NeedApprovalPageIndex} data-lookup={NeedApprovalDirectoryIndex} onkeypress={handleCredTypeSelect} onclick={handleCredTypeSelect} class="navigation-item-title type--callUs">Need Approval({typeCountNeedApproval})</li>
+          <li tabindex="0" data-type ="Call Us"  data-indexrange={CallUsPageIndex} data-lookup={CallUsDirectoryIndex}  onclick={handleCredTypeSelect} onkeypress={handleCredTypeSelect} class="navigation-item-title type--callUs">Call Us ({typeCountCallUs})</li>
+          <li tabindex="0" data-type ="Enrolled" data-indexrange={EnrolledPageIndex} data-lookup={EnrolledDirectoryIndex}  onclick={handleCredTypeSelect} onkeypress={handleCredTypeSelect} class="navigation-item-title">Enrolled ({typeCountEnrolled})</li>
+          <li tabindex="0" data-type ="Reworking Offer" data-indexrange={ReworkingOfferPageIndex} data-lookup={ReworkingOfferDirectoryIndex} onkeypress={handleCredTypeSelect} onclick={handleCredTypeSelect} class="navigation-item-title">Reworking Offer ({typeCountReworkingOffer})</li>
+          <li tabindex="0" data-type ="Finalizing Offer" data-indexrange={FinalizingOfferPageIndex} data-lookup={FinalizingOfferDirectoryIndex} onkeypress={handleCredTypeSelect} onclick={handleCredTypeSelect} class="navigation-item-title">Finalizing Offer ({typeCountFinalizingOffer})</li>
+          <li tabindex="0" data-type ="Issuing Payments" data-indexrange={IssuingPaymentsPageIndex} data-lookup={IssuingPaymentsDirectoryIndex}  onkeypress={handleCredTypeSelect} onclick={handleCredTypeSelect} class="navigation-item-title">Issuing Payments ({typeCountIssuingPayments})</li>
+
+     
+          <li tabindex="0" data-type ="Paid In Full"  data-indexrange={PaidinFullPageIndex} data-lookup={PaidinFullDirectoryIndex}  onkeypress={handleCredTypeSelect} onclick={handleCredTypeSelect}  class="navigation-item-title">Paid in Full ({typeCountPaidInFull})</li>
+      
+      
+   
+   
+        </ul>
+      </div>
+      
+      <template for:each={creditorTablePageList} for:item="creditorTableListItems">
+      <div class={creditorTableClass} key={creditorTableListItems.index}>
+
+    <template for:each={creditorTableListItems} for:item="creditorItem">
+
+      <template if:true={creditorItem.isDefault}>
+      <div class={creditorItem.creditorItemClass} key={creditorItem.uniqueIndex}>
+        <div class="creditem_expandbtn"  onkeypress={onHandleExpand} onclick={onHandleExpand} tabindex="0">[ + ]</div>
+        <div class="creditem_expandbtn--mobile" onclick={onHandleExpand}><svg data-name="svgExpandBtn" viewBox="0 0 145.1 98.9">
+            <polygon points="0 0 145.1 0 71.3 98.9 0 0" style="fill: rgb(32, 3, 125);"></polygon>
+          </svg></div>
+        <div class="creditem_content_wrapper ">
+          <div class="creditorRowTop">
+            <div class="creditorTop--rowa slds-grid slds-wrap slds-medium-size_3-of-6 ">
+              <div class="progressbar_wrapper slds-col slds-size_1-of-1 slds-medium-size_2-of-6 slds-p-around_small ">
+                <div class="progressbar_eyebrow slds-size_1-of-3 slds-medium-size_3-of-3"><span class={creditorItem.creditorTypeClass}>{creditorItem.progressStatus}</span></div>
+
+                <c-ndr-portal-progress-bar-s-v-g class="slds-size_2-of-3 slds-medium-size_3-of-3" uid={creditorItem.uniqueIndex} fill-color={creditorItem.creditorTypeColor} percentage={creditorItem.percentage}></c-ndr-portal-progress-bar-s-v-g>
+              
+              </div>
+              <div class="creditor_detail_wrapper slds-size_1-of-1 slds-x-small-size_3-of-6">
+              <div class="creditorIcon--col slds-col slds-size_1-of-3 slds-medium-size_1-of-6">
+                <div class="creditorIcon"><img alt="creditor Logo"
+                    src={creditorItem.creditorLogo}>
+                </div>
+              </div>
+              <div class="creditorID slds-col slds-size_2-of-3 slds-medium-size_3-of-6">
+                <div class="creditorTitle"><span class="creditorname">{creditorItem.creditorName}</span></div>
+                <div class="creditorACCT"><span class="accountnumber">{creditorItem.accountNo}</span></div>
+              </div>
+            </div>
+          </div>
+            <div class="creditorTop--rowb">
+              <div class="creditorPaid">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                    class="numbertext">{creditorItem.amountPaidDollars}</span><span class="number-suffix">{creditorItem.amountPaidCents}</span></div>
+                <div class="creditor_amount_description"><span>{creditorRowItemLabel1}</span></div>
+              </div>
+              <div class="creditorCISF">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                    class="numbertext">{creditorItem.settlePayFeeDollars}</span><span class="number-suffix">{creditorItem.settlePayFeeCents}</span></div>
+                <div class="creditor_amount_description"><span>{creditorRowItemLabel2}</span></div>
+              </div>
+              <div class="creditorBalance">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                    class="numbertext">{creditorItem.currentBalanceDollars}</span><span class="number-suffix">{creditorItem.currentBalanceCents}</span></div>
+                <div class="creditor_amount_description"><span>{creditorRowItemLabel3}</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="creditorSummaryWrapper ">
+            <div class="creditorSummaryRow">
+              <div class="creditorSummaryCard">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                    class="numbertext">{creditorItem.originalBalanceDollars}</span><span class="number-suffix">{creditorItem.originalBalanceCents}</span></div>
+                <div class="creditor_amount_description"><span>{creditorSummaryItemLabel1}</span></div>
+              </div>
+              <div class="creditorSummaryCard">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                    class="numbertext">{creditorItem.settlementAmountDollars}</span><span class="number-suffix">{creditorItem.settlementAmountCents}</span></div>
+                <div class="creditor_amount_description"><span>{creditorSummaryItemLabel2}</span></div>
+              </div>
+              <div class="creditorSummaryCard">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="numbertext">{creditorItem.settlementPct}</span> <span
+                    class="suffix type--issuingPayments">%</span></div>
+                <div class="creditor_amount_description"><span>{creditorSummaryItemLabel3}</span></div>
+              </div>
+              <div class="creditorSummaryCard">
+                <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                    class="numbertext">{creditorItem.totalFeesDollars}</span><span class="number-suffix">{creditorItem.totalFeesCents}</span></div>
+                <div class="creditor_amount_description"><span>{creditorSummaryItemLabel4} </span></div>
+              </div>
+            </div>
+          </div>
+           <template if:true={creditorItem.PSItems}>
+          <div class="creditorPSWrapper">
+            <div class="creditorPaymentWrapper">
+              <h2 class={creditorItem.creditorTypeClass}>PAYMENTS</h2>
+              <div class="creditorPaymentItemWrapper">
+                <div class="wrapper_header">
+                  <ul>
+                    <li>{paymentCol1}</li>
+                    <li>{paymentCol2}</li>
+                    <li>{paymentCol3}</li>
+                  </ul>
+                </div>
+                <div class="creditorPaymentItem">
+                  <ul class="show">
+                    <template for:each={creditorItem.PSItems.Creditors} for:item="PSItem">
+                    <li key={PSItem.index}><span class="ps_date">{PSItem.paymentDate}</span><span class="ps_amount">{PSItem.creditorPayments}</span><span
+                        class="ps_status">{PSItem.paymentStatus}</span></li>
+                  
+                    </template>
+</ul>
+</div>
+</div>
+</div>
+<div class="creditorPaymentWrapper">
+    <h2 class={creditorItem.creditorTypeClass}>FEES</h2>
+    <div class="creditorPaymentItemWrapper">
+        <div class="wrapper_header">
+            <ul>
+                <li>{paymentCol1}</li>
+                <li>{paymentCol2}</li>
+                <li>{paymentCol3}</li>
+            </ul>
+        </div>
+        <div class="creditorPaymentItem">
+            <ul class="show">
+                <template for:each={creditorItem.PSItems.Fees} for:item="PSItem">
+        <li key={PSItem.index}><span class="ps_date">{PSItem.paymentDate}</span><span class="ps_amount">{PSItem.creditorPayments}</span><span
+            class="ps_status">{PSItem.paymentStatus}</span></li>
+        </template>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+</div>
+</div>
+</template>
+<template if:true={creditorItem.isNeedApproval}>
+        <div class={creditorItem.creditorItemClass} key={creditorItem.uniqueIndex} data-cid={creditorItem.creditorId} >
+          <div class="creditem_expandbtn"  onclick={onHandleExpand}>[ + ]</div>
+          <div class="creditem_expandbtn--mobile" onclick={onHandleExpand}><svg data-name="svgExpandBtn" viewBox="0 0 145.1 98.9">
+              <polygon points="0 0 145.1 0 71.3 98.9 0 0" style="fill: rgb(32, 3, 125);"></polygon>
+            </svg></div>
+          <div class="creditem_content_wrapper ">
+            <div class="creditorRowTop slds-grid slds-wrap">
+              <div class="creditorTop--rowa slds-grid slds-wrap  ">
+                <div class="progressbar_wrapper slds-col slds-size_1-of-1 slds-medium-size_2-of-6 slds-p-around_small ">
+                  <div class="progressbar_eyebrow slds-size_1-of-3 slds-medium-size_3-of-3"><span class={creditorItem.creditorTypeClass}>{creditorItem.progressStatus}</span></div>
+  
+                  <c-ndr-portal-progress-bar-s-v-g class="slds-size_2-of-3 slds-medium-size_3-of-3" uid={creditorItem.uniqueIndex} fill-color={creditorItem.creditorTypeColor} percentage={creditorItem.percentage}></c-ndr-portal-progress-bar-s-v-g>
+                
+                </div>
+                <div class="creditor_detail_wrapper slds-size_1-of-1 slds-x-small-size_3-of-6">
+                <div class="creditorIcon--col slds-col slds-size_1-of-3 slds-medium-size_1-of-6">
+                  <div class="creditorIcon"><img  alt="creditor Logo"
+                      src={creditorItem.creditorLogo}>
+                  </div>
+                </div>
+                <div class="creditorID slds-col slds-size_2-of-3 slds-medium-size_2-of-6">
+                  <div class="creditorTitle"><span class="creditorname">{creditorItem.creditorName}</span></div>
+                  <div class="creditorACCT"><span class="accountnumber">{creditorItem.accountNo}</span></div>
+                </div>
+                </div>
+              </div>
+              <div class="creditorTop--rowb">
+                <div class="creditorPaid">
+                  <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                      class="numbertext">{creditorItem.amountPaidDollars}</span><span class="number-suffix">{creditorItem.amountPaidCents}</span></div>
+                  <div class="creditor_amount_description"><span>{creditorRowItemLabel1}</span></div>
+                </div>
+                <div class="creditorCISF">
+                  <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                      class="numbertext">{creditorItem.settlePayFeeDollars}</span><span class="number-suffix">{creditorItem.settlePayFeeCents}</span></div>
+                  <div class="creditor_amount_description"><span>{creditorRowItemLabel2}</span></div>
+                </div>
+                <div class="creditorBalance">
+                  <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                      class="numbertext">{creditorItem.currentBalanceDollars}</span><span class="number-suffix">{creditorItem.currentBalanceCents}</span></div>
+                  <div class="creditor_amount_description"><span>{creditorRowItemLabel3}</span></div>
+                </div>
+              </div>
+              <div class="settlement_offer_description slds-p-around_small">
+                <p>National Debt Relief has some exciting news for you. We have a settlement proposal for your review!</p>
+              </div>
+      
+              <div class="slds-grid slds-p-around_small viewOfferFooter">
+                <c-ndr-portal-button onclick={setSelectedOffer} onkeypress={setSelectedOffer}  class="creditor_item_approve_btn" variant-color-class="cta-button-red" data-cid={creditorItem.creditorId} tabindex="-1" button-text="View Offer">
+                </c-ndr-portal-button>
+            </div>
+            </div>
+            <div class="creditorSummaryWrapper" >
+              <div class="creditorSummaryRow">
+                <div class="creditorSummaryRow">
+                  <div class="creditorSummaryCard">
+                    <div class="creditor_amount"><span class="currency">$</span><span
+                        class="numbertext">{creditorItem.originalBalanceDollars}</span><span class="number-suffix">{creditorItem.originalBalanceCents}</span></div>
+                    <div class="creditor_amount_description"><span>{creditorSummaryItemLabel1}</span></div>
+                  </div>
+                  <div class="creditorSummaryCard">
+                    <div  class="creditor_amount"><span class="currency">$</span><span
+                        class="numbertext">{creditorItem.settlementAmountDollars}</span><span class="number-suffix">{creditorItem.settlementAmountCents}</span></div>
+                    <div class="creditor_amount_description"><span>{creditorSummaryItemLabel2}</span></div>
+                  </div>
+                  <div class="creditorSummaryCard">
+                    <div  class="creditor_amount"><span class="numbertext">{creditorItem.settlementPct}</span> <span
+                        class="suffix type--issuingPayments">%</span></div>
+                    <div class="creditor_amount_description"><span>{creditorSummaryItemLabel3} </span></div>
+                  </div>
+                  <div class="creditorSummaryCard">
+                    <div  class="creditor_amount"><span class="currency">$</span><span
+                        class="numbertext">{creditorItem.totalFeesDollars}</span><span class="number-suffix">{creditorItem.totalFeesCents}</span></div>
+                    <div class="creditor_amount_description"><span>{creditorSummaryItemLabel4}</span></div>
+                  </div>
+                </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</template>
+
+<template if:true={creditorItem.isCallUs}>
+  <div class={creditorItem.creditorItemClass} key={creditorItem.uniqueIndex} >
+    <div class="creditem_expandbtn" style="display:none;"  onkeypress={onHandleExpand} onclick={onHandleExpand}>[ + ]</div>
+    <div class="creditem_expandbtn--mobile" style="display:none;" onclick={onHandleExpand}><svg data-name="svgExpandBtn" viewBox="0 0 145.1 98.9">
+        <polygon points="0 0 145.1 0 71.3 98.9 0 0" style="fill: rgb(32, 3, 125);"></polygon>
+      </svg></div>
+    <div class="creditem_content_wrapper ">
+      <div class="creditorRowTop">
+        <div class="creditorTop--rowa slds-grid slds-wrap slds-medium-size_3-of-6 ">
+          <div class="progressbar_wrapper slds-col slds-size_1-of-1 slds-medium-size_2-of-6 slds-p-around_small ">
+            <div class="progressbar_eyebrow slds-size_1-of-3 slds-medium-size_3-of-3"><span class={creditorItem.creditorTypeClass}>{creditorItem.progressStatus}</span></div>
+
+            <c-ndr-portal-progress-bar-s-v-g class="slds-size_2-of-3 slds-medium-size_3-of-3" uid={creditorItem.uniqueIndex} fill-color={creditorItem.creditorTypeColor} percentage={creditorItem.percentage}></c-ndr-portal-progress-bar-s-v-g>
+          
+          </div>
+          <div class="creditorIcon--col slds-col slds-size_1-of-3 slds-medium-size_1-of-6">
+            <div class="creditorIcon"><img  alt="creditor Logo"
+                src={creditorItem.creditorLogo}>
+            </div>
+          </div>
+          <div class="creditorID slds-col slds-size_2-of-3 slds-medium-size_2-of-6">
+            <div class="creditorTitle"><span class="creditorname">{creditorItem.creditorName}</span></div>
+            <div class="creditorACCT"><span class="accountnumber">{creditorItem.accountNo}</span></div>
+          </div>
+        </div>
+        <div class="creditorTop--rowb onHoldStyle">
+    
+          <div class="creditorBalance">
+            <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                class="numbertext">{creditorItem.originalBalanceDollars}</span><span class="number-suffix">{creditorItem.originalBalanceCents}</span></div>
+            <div class="creditor_amount_description"><span>Enrolled</span></div>
+          </div>
+        </div>
+      </div>
+      
+    
+</div>
+</div>
+</template>
+<template if:true={creditorItem.isEnrolled}>
+  <div class={creditorItem.creditorItemClass} key={creditorItem.uniqueIndex} >
+    <div class="creditem_expandbtn" style="display:none;"   onkeypress={onHandleExpand} onclick={onHandleExpand}>[ + ]</div>
+    <div class="creditem_expandbtn--mobile" style="display:none;" onclick={onHandleExpand}><svg data-name="svgExpandBtn" viewBox="0 0 145.1 98.9">
+        <polygon points="0 0 145.1 0 71.3 98.9 0 0" style="fill: rgb(32, 3, 125);"></polygon>
+      </svg></div>
+    <div class="creditem_content_wrapper">
+      <div class="creditorRowTop">
+        <div class="creditorTop--rowa  --onHold slds-grid slds-wrap slds-medium-size_3-of-6 ">
+          <div class="progressbar_wrapper slds-col slds-size_1-of-1 slds-medium-size_2-of-6 slds-p-around_small">
+            <div class="progressbar_eyebrow slds-size_1-of-3 slds-medium-size_3-of-3"><span class={creditorItem.creditorTypeClass}>{creditorItem.progressStatus}</span></div>
+
+            <c-ndr-portal-progress-bar-s-v-g class="slds-size_2-of-3 slds-medium-size_3-of-3" uid={creditorItem.uniqueIndex} fill-color={creditorItem.creditorTypeColor} percentage={creditorItem.percentage}></c-ndr-portal-progress-bar-s-v-g>
+            
+          </div>
+          <div class="creditor_detail_wrapper  slds-size_1-of-1 slds-x-small-size_3-of-6">
+          <div class="creditorIcon--col slds-col slds-size_1-of-3 slds-medium-size_1-of-6">
+            <div class="creditorIcon"><img  alt="creditor Logo"
+               src={creditorItem.creditorLogo}>
+            </div>
+          </div>
+          <div class="creditorID slds-col slds-size_2-of-3 slds-medium-size_2-of-6">
+            <div class="creditorTitle"><span class="creditorname">{creditorItem.creditorName}</span></div>
+            <div class="creditorACCT"><span class="accountnumber">{creditorItem.accountNo}</span></div>
+          </div>
+          </div>
+        </div>
+        <div class="creditorTop--rowb onHoldStyle">
+    
+          <div class="creditorBalance">
+            <div class={creditorItem.creditorAmountTypeClass}><span class="currency">$</span><span
+                class="numbertext">{creditorItem.originalBalanceDollars}</span><span class="number-suffix">{creditorItem.originalBalanceCents}</span></div>
+            <div class="creditor_amount_description"><span>Enrolled</span></div>
+          </div>
+        </div>
+      </div>
+      
+    
+</div>
+</div>
+</template>
+</template>
+
+</div>
+</template>
+
+<div class="creditor_footer">
+    <ul class="paginate_list" role="tablist">
+        <template if:true={credIndexItems}>
+      <template for:each={credIndexItems} for:item="credIndexItem">
+      <li key={credIndexItem.index}  role="tab" onclick={onCredPageChange} onkeypress={onCredPageChange} tabindex="0" data-lookid={credIndexItem.lookupPage}>{credIndexItem.index}</li>
+      </template>
+        </template>
+    </ul>
+</div>
+</template>
+</div>
+</div>
+<template if:true={selectedOffer}>
+<template if:true={showModal}>
+  
+  <section role="dialog" tabindex="-1" aria-label="Settlement approval modal" aria-modal="true"
+      class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+          <div class="modal_wrapper ">
+      
+
+<div class="slds-modal__content slds-var-p-around_large slds-var-p-bottom_small">
+
+<div class="module_header slds-grid slds-grid_horizontal">
+<h2 class="cAssetHeader slds-align-top">{modalHeader}</h2>
+<div class="closeBtn slds-m-top_none">
+  <span onkeypress={closeModal} onclick={closeModal}>X</span>
+</div>
+</div>
+<div class="cAssetDetail settlement_reached_wrapper slds-is-relative slds-m-top_small">
+<template if:true={isModalLoading}>
+  <c-ndr-portal-app-spinner></c-ndr-portal-app-spinner>
+</template>
+<div class="settlement_details slds-grid slds-grid_vertical ">
+
+    <div class="settlement_letter">
+        <p>{clientName},<br></br>
+            {modalDisplayText}
+        </p>
+
+    </div>
+
+    <div class="slds-grid slds-p-top_small slds-p-bottom_small creditorID">
+        <div class="creditorIcon--col slds-size_2-of-8">
+            <div class="creditorIcon"><img alt="creditor Logo" src={selectedOffer.creditorLogo}>
+            </div>
+        </div>
+
+        <div class="detail_fields slds-grid slds-size_6-of-8 slds-p-left_small slds-grid_vertical slds-wrap">
+            <span class="settlement-creditorName">{selectedOffer.creditorName}</span>
+            <span class="settlement-creditorAcct">*{selectedOffer.accountNo}</span>
+        </div>
+    </div>
+    <div class="settlement_details_item">
+        <div class="detail_labels">
+            <span>Balance at Settlement</span></div>
+        <div class="detail_fields">
+            <span class="settlement-currentbalance">${selectedOffer.currentBalance}</span>
+        </div>
+    </div>
+
+    <div class="settlement_details_item">
+        <div class="detail_labels">
+            <span>Proposed Settlement Offer</span></div>
+        <div class="detail_fields">
+            <span class="settlement-creditorAmount">${selectedOffer.settlementAmount}</span>
+        </div>
+    </div>
+    <div class="settlement_details_item">
+        <div class="detail_labels">
+            <span>Total Savings</span></div>
+        <div class="detail_fields">
+            <span class="settlement-creditorAmount">${selectedOffer.clientSavings}</span>
+        </div>
+    </div>
+    <div class="settlement_details_item">
+        <div class="detail_labels">
+            <span>Total Payments</span></div>
+        <div class="detail_fields">
+            <span class="settlement-creditorAmount">{selectedOffer.offerTerm}</span>
+        </div>
+    </div>
+    <div class="slds-p-top_x-small">
+        <div class="detail_labels">
+            <span>Monthly Payments</span></div>
+        <div class="detail_fields">
+            <div class="monthlyPayment_list slds-size_2-of-3 slds-medium-size_1-of-3">
+                <ul>
+                    <template for:each={selectedOffer.SIFItems} for:item="SIFItem">
+
+              <li key={SIFItem.index}><span class="monthlyPayment_date">{SIFItem.months}</span><span class="monthlyPayment_amount">${SIFItem.amount}</span></li>
+              
+             </template>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+<template if:true={message}>
+                  <div class="messages slds-grid slds-grid_align-center 
+                  slds-var-p-top_x-small
+                  slds-var-p-left_x-small slds-var-p-right_x-small">
+                      <p class={messageType}>{message}</p>
+                  </div>
+
+              </template>
+</div>
+<footer class="slds-modal__footer slds-grid slds-grid_align-space slds-p-bottom_large">
+    <button aria-label="Cancel" class="neutral-button slds-size_1-of-3 slds-text-title_caps slds-button" onkeypress={closeModal} onclick={closeModal}>{modalCancelText}</button>
+    <button aria-label="Approve" onclick={submitApproval} onkeypress={submitApproval} class="ndr-button slds-size_1-of-3 slds-text-title_caps slds-button" data-ciid={selectedOffer.creditorInteractionsId}>{modalApproveText}</button>
+
+
+</footer>
+</div>
+</div>
+</section>
+
+</template>
+</template>
+<div class={backdropClass}></div>
+</template>

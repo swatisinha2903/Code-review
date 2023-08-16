@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+   <apiVersion>52.0</apiVersion>
+     <isExposed>true</isExposed>
+       <masterLabel>NDR Portal Dashboard Creditors</masterLabel>
+    <targets>
+         <target>lightningCommunity__Page</target>
+         <target>lightningCommunity__Default</target>
+              <target>lightning__FlowScreen</target>
+    </targets>
+     <targetConfigs>
+         <targetConfig targets="lightningCommunity__Default">
+         <property name="creditorRowItemLabel1" type="String" label="Creditor Row Item Label 1" default="Paid to Creditor"/>
+        <property name="creditorRowItemLabel2" type="String" label="Creditor Row Item Label 2" default="Settlement &amp; Fee"/>
+         <property name="creditorRowItemLabel3" type="String" label="Creditor Row Item Label 3" default="Balance at Settlement"/>
+                <property name="creditorSummaryItemLabel1" type="String" label="Creditor Summary Item Label 1" default="BALANCE AT ENROLLMENT"/>
+    <property name="creditorSummaryItemLabel2" type="String" label="Creditor Summary Item Label 2" default="SETTLEMENT"/>
+      <property name="creditorSummaryItemLabel3" type="String" label="Creditor Summary Item Label 3" default="SETTLEMENT PERCENTAGE"/>
+    <property name="creditorSummaryItemLabel4" type="String" label="Creditor Summary Item Label 4" default="TOTAL FEES"/>
+  <property name="paymentCol1" type="String" label="Payments Col 1 Label" default="Date"/>
+ <property name="paymentCol2" type="String" label="Payments Col 2 Label" default="Amount"/>
+  <property name="paymentCol3" type="String" label="Payments Col 3 Label" default="Status"/>
+    <property name="modalHeader" type="String" label="View Offer Modal Header" default="Settlement Approval Confirmation"/>
+       <property name="modalDisplayText" type="String" label="View Offer Modal Display Text" default="Please Review the settlement details below and click the ‘Approve’ button to agree to these terms. Once you approve, we will confirm with your creditor and begin to make payments from your dedicated savings account."/>
+    <property name="modalApproveText" type="String" label="Modal Approve Text" default="Approve"/>
+      <property name="modalCancelText" type="String" label="Modal Cancel Text" default="Cancel"/>
+         </targetConfig>
+             <targetConfig targets="lightning__FlowScreen">
+    <property name="creditorRowItemLabel1" type="String" label="Creditor Row Item Label 1" default="Paid to Creditor"/>
+        <property name="creditorRowItemLabel2" type="String" label="Creditor Row Item Label 2" default="Settlement &amp; Fee"/>
+         <property name="creditorRowItemLabel3" type="String" label="Creditor Row Item Label 3" default="Balance at Settlement"/>
+                <property name="creditorSummaryItemLabel1" type="String" label="Creditor Summary Item Label 1" default="BALANCE AT ENROLLMENT"/>
+    <property name="creditorSummaryItemLabel2" type="String" label="Creditor Summary Item Label 2" default="SETTLEMENT"/>
+      <property name="creditorSummaryItemLabel3" type="String" label="Creditor Summary Item Label 3" default="SETTLEMENT PERCENTAGE"/>
+    <property name="creditorSummaryItemLabel4" type="String" label="Creditor Summary Item Label 4" default="TOTAL FEES"/>
+  <property name="paymentCol1" type="String" label="Payments Col 1 Label" default="Date"/>
+ <property name="paymentCol2" type="String" label="Payments Col 2 Label" default="Amount"/>
+  <property name="paymentCol3" type="String" label="Payments Col 3 Label" default="Status"/>
+     <property name="modalHeader" type="String" label="View Offer Modal Header" default="Settlement Approval Confirmation"/>
+       <property name="modalDisplayText" type="String" label="View Offer Modal Display Text" default="Please Review the settlement details below and click the ‘Approve’ button to agree to these terms. Once you approve, we will confirm with your creditor and begin to make payments from your dedicated savings account."/>
+    <property name="modalApproveText" type="String" label="Modal Approve Text" default="Approve"/>
+      <property name="modalCancelText" type="String" label="Modal Cancel Text" default="Cancel"/>
+         </targetConfig>
+     </targetConfigs>
+</LightningComponentBundle>
